@@ -2257,33 +2257,6 @@
                 }
             },
 
-            languageCommand: {
-                command: 'language',
-                rank: 'manager',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!LazyBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        if (msg.length <= cmd.length + 1) return API.sendChat(subChat(LazyBot.chat.currentlang, {language: LazyBot.settings.language}));
-                        var argument = msg.substring(cmd.length + 1);
-
-                        $.get("https://cdn.rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json", function (json) {
-                            var langIndex = json;
-                            var link = langIndex[argument.toLowerCase()];
-                            if (typeof link === "undefined") {
-                                API.sendChat(subChat(LazyBot.chat.langerror, {link: "https://cdn.rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json"}));
-                            }
-                            else {
-                                LazyBot.settings.language = argument;
-                                loadChat();
-                                API.sendChat(subChat(LazyBot.chat.langset, {language: LazyBot.settings.language}));
-                            }
-                        });
-                    }
-                }
-            },
 
             leaveCommand: {
                 command: 'leave',
