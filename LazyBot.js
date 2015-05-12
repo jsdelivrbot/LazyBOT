@@ -1,5 +1,5 @@
 /**
- *Copyright 2014 Nikhil & Cedric
+ *Copyright 2014 Yemasthui
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
  */
@@ -174,18 +174,18 @@
         return m;
     };
 
-    var botCreator = "Matthew (Yemasthui)";
-    var botMaintainer = "Benzi (Quoona)"
-    var botCreatorIDs = ["3851534", "4105209"];
+    var botCreator = "Nikhil";
+    var botMaintainer = "Cedric"
+    var botCreatorIDs = ["3635118"];
 
     var LazyBot = {
         version: "2.3.4",
         status: false,
         name: "LazyBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/Yemasthui/LazyBot/master/LazyBot.js",
-        cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/Yemasthui/LazyBot/master/lang/en.json",
+        scriptLink: null,
+        cmdLink: "lazyroom.weebly.com/lazybot-commands.html",
+        chatLink: "https://rawgit.com/NikhilJangid007/LazyBOT/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -193,8 +193,8 @@
         settings: {
             botName: "LazyBot",
             language: "english",
-            chatLink: "https://rawgit.com/Yemasthui/LazyBot/master/lang/en.json",
-            startupCap: 1, // 1-200
+            chatLink: "https://rawgit.com/NikhilJangid007/LazyBOT/master/lang/en.json",
+            startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             cmdDeletion: true,
@@ -270,18 +270,18 @@
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: null,
+            rulesLink: "http://lazyroom.weebly.com/rules.html",
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: null,
+            website: "www.lazyroom.ga",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Yemasthui/LazyBot-customization/master/blacklists/ExampleNSFWlist.json",
-                OP: "https://rawgit.com/Yemasthui/LazyBot-customization/master/blacklists/ExampleOPlist.json"
+                NSFW: "https://rawgit.com/NikhilJangid007/LazyBOT/master/Blacklist/NSFW.json",
+                OP: "https://rawgit.com/NikhilJangid007/LazyBOT/master/Blacklist/op.json"
             }
         },
         room: {
@@ -2241,7 +2241,7 @@
 
             killCommand: {
                 command: 'kill',
-                rank: 'bouncer',
+                rank: 'Co-Host',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2269,7 +2269,7 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(LazyBot.chat.currentlang, {language: LazyBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/Yemasthui/LazyBot/master/lang/langIndex.json", function (json) {
+                        $.get("https://rawgit.com/NikhilJangid007/LazyBOT/master/Blacklist/op.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
@@ -2719,7 +2719,7 @@
 
             reloadCommand: {
                 command: 'reload',
-                rank: 'bouncer',
+                rank: 'Co-Host',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
