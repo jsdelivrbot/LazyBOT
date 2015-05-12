@@ -2269,11 +2269,11 @@
                         if (msg.length <= cmd.length + 1) return API.sendChat(subChat(LazyBot.chat.currentlang, {language: LazyBot.settings.language}));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get("https://rawgit.com/NikhilJangid007/LazyBOT/master/Blacklist/op.json", function (json) {
+                        $.get("https://cdn.rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json", function (json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === "undefined") {
-                                API.sendChat(subChat(LazyBot.chat.langerror, {link: "http://git.io/vJ9nI"}));
+                                API.sendChat(subChat(LazyBot.chat.langerror, {link: "https://cdn.rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json"}));
                             }
                             else {
                                 LazyBot.settings.language = argument;
