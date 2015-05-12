@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json", function (json) {
             var link = LazyBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
