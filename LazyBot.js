@@ -1,5 +1,5 @@
 /**
- *Copyright 2014 Yemasthui
+ *Copyright 2014 Nikhil & Cedric
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
  *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
  */
@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/Yemasthui/LazyBot/master/lang/langIndex.json", function (json) {
+        $.get("https://rawgit.com/NikhilJangid007/LazyBOT/master/lang/langIndex.json", function (json) {
             var link = LazyBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -196,7 +196,7 @@
             chatLink: "https://rawgit.com/NikhilJangid007/LazyBOT/master/lang/en.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: false, // true or false
+            startupEmoji: true, // true or false
             cmdDeletion: true,
             maximumAfk: 120,
             afkRemoval: true,
